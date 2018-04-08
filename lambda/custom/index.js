@@ -80,7 +80,7 @@ const recology = {
 		},
 		{
 			"terms": [
-				"Greasy pizza boxes",
+				"pizza boxes",
 			],
 			"desc": "Greasy pizza boxes",
 		},
@@ -92,13 +92,13 @@ const recology = {
 		},
 		{
 			"terms": [
-				"Paper bags, napkins, tissues and towels",
+				"Paper bags", "napkins", "paper napkins", "tissues", "paper tissues", "paper towels",
 			],
 			"desc": "Paper bags, napkins, tissues and towels",
 		},
 		{
 			"terms": [
-				"Paper take-out boxes and containers (metal handle OK)",
+				"take-out boxes", "Paper take-out boxes", "paper containers",
 			],
 			"desc": "Paper take-out boxes and containers (metal handle OK)",
 		},
@@ -110,19 +110,19 @@ const recology = {
 		},
 		{
 			"terms": [
-				"Branches and brush",
+				"Branches", "brush",
 			],
 			"desc": "Branches and brush",
 		},
 		{
 			"terms": [
-				"Flowers and floral trimmings",
+				"Flowers", "floral trimmings",
 			],
 			"desc": "Flowers and floral trimmings",
 		},
 		{
 			"terms": [
-				"Grasses and weeds",
+				"Grasses", "weeds",
 			],
 			"desc": "Grasses and weeds",
 		},
@@ -134,25 +134,25 @@ const recology = {
 		},
 		{
 			"terms": [
-				"Tree trimmings (less than 6 inches in diameter and 4 feet long)",
+				"Tree trimmings",
 			],
 			"desc": "Tree trimmings (less than 6 inches in diameter and 4 feet long)",
 		},
 		{
 			"terms": [
-				"Cotton balls and cotton swabs",
+				"Cotton balls", "cotton swabs",
 			],
 			"desc": "Cotton balls and cotton swabs",
 		},
 		{
 			"terms": [
-				"Hair, fur, and feathers (non-synthetic)",
+				"Hair", "fur", "feathers",
 			],
 			"desc": "Hair, fur, and feathers (non-synthetic)",
 		},
 		{
 			"terms": [
-				"Plastic and cutlery clearly labeled “Compostable”",
+				"Compostable Plastic", "cutlery", "compostable cutlery",
 			],
 			"desc": "Plastic and cutlery clearly labeled “Compostable” (green stripe or sticker to allow for easy identification)",
 		},
@@ -170,19 +170,19 @@ const recology = {
 		},
 		{
 			"terms": [
-				"Wood – small pieces of lumber or sawdust from clean wood only (no plywood, press board, painted, stained or treated wood)",
+				"lumber", "sawdust",
 			],
 			"desc": "Wood – small pieces of lumber or sawdust from clean wood only (no plywood, press board, painted, stained or treated wood)",
 		},
 		{
 			"terms": [
-				"Wooden chop sticks",
+				"chop sticks", "wooden chop sticks",
 			],
 			"desc": "Wooden chop sticks",
 		},
 		{
 			"terms": [
-				"Corks – natural (drop in barrels at Whole Foods)",
+				"Corks",
 			],
 			"desc": "Corks – natural (drop in barrels at Whole Foods)",
 		},
