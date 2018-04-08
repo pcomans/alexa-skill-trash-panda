@@ -190,62 +190,62 @@ const recology = {
 	recycling: [
 		{
 			"terms": [
-				"Aluminum cans",
+				"cans", "Aluminum cans",
 			],
 			"desc": "Aluminum cans",
 		},
 		{
 			"terms": [
-				"Aluminum foil",
-				"Aluminum trays",
+				"foil", "Aluminum foil",
+				"trays", "Aluminum trays",
 			],
 			"desc": "Aluminum foil and trays (ball foil up to softball size)",
 		},
 		{
 			"terms": [
-				"Caps and lids from bottles, jars and steel (tin) cans",
+				"lids", "Caps",
 			],
 			"desc": "Caps and lids from bottles, jars and steel (tin) cans",
 		},
 		{
 			"terms": [
-				"Paint cans (must be empty or dry)",
+				"Paint cans",
 			],
 			"desc": "Paint cans (must be empty or dry)",
 		},
 		{
 			"terms": [
-				"Spray cans (must be empty)",
+				"Spray cans",
 			],
 			"desc": "Spray cans (must be empty)",
 		},
 		{
 			"terms": [
-				"Steel (tin) cans",
+				"Steel cans", "tin cans",
 			],
 			"desc": "Steel (tin) cans",
 		},
 		{
 			"terms": [
-				"Clean, dry, empty plastic bags inside a clear plastic bag (the size roughly of a basketball)",
+				"plastic bags", "bags",
 			],
 			"desc": "Clean, dry, empty plastic bags inside a clear plastic bag (the size roughly of a basketball)",
 		},
 		{
 			"terms": [
-				"Bottles (leave caps on)",
+				"Bottles",
 			],
 			"desc": "Bottles (leave caps on)",
 		},
 		{
 			"terms": [
-				"Buckets (metal handle ok)",
+				"Buckets",
 			],
 			"desc": "Buckets (metal handle ok)",
 		},
 		{
 			"terms": [
-				"CD’s, DVD’s, CDROM and Cases (remove paper insert)",
+				"CDs", "DVDs", "CDROMs", "CD Cases",
 			],
 			"desc": "CD’s, DVD’s, CDROM and Cases (remove paper insert)",
 		},
@@ -257,25 +257,25 @@ const recology = {
 		},
 		{
 			"terms": [
-				"Containers and clamshells",
+				"Containers", "clamshells",
 			],
 			"desc": "Containers and clamshells",
 		},
 		{
 			"terms": [
-				"Corks – plastic",
+				"plastic Corks",
 			],
 			"desc": "Corks – plastic",
 		},
 		{
 			"terms": [
-				"Cups and plates (plastic only, no Styrofoam)",
+				"Cups", "plates", "plastic cups", "plastic plates",
 			],
 			"desc": "Cups and plates (plastic only, no Styrofoam)",
 		},
 		{
 			"terms": [
-				"Flower pots and trays – plastic",
+				"Flower pots", "flower trays", "plastic flower pots", "plastic flower trays",
 			],
 			"desc": "Flower pots and trays – plastic",
 		},
@@ -287,49 +287,49 @@ const recology = {
 		},
 		{
 			"terms": [
-				"Molded plastic packaging",
+				"plastic packaging",
 			],
 			"desc": "Molded plastic packaging",
 		},
 		{
 			"terms": [
-				"Toys (no electronics, metal or batteries)",
+				"Toys",
 			],
 			"desc": "Toys (no electronics, metal or batteries)",
 		},
 		{
 			"terms": [
-				"Tubs and lids (i.e.,: yogurt containers and Tupperware)",
+				"Tubs", "lids", "yogurt containers", "Tupperware",
 			],
 			"desc": "Tubs and lids (i.e.,: yogurt containers and Tupperware)",
 		},
 		{
 			"terms": [
-				"Utensils – plastic",
+				"Utensils", "plastic utensils",
 			],
 			"desc": "Utensils – plastic",
 		},
 		{
 			"terms": [
-				"Linens – Clean and placed in clear bag. Towels, curtains okay.",
+				"Linens", "Towels", "curtains",
 			],
 			"desc": "Linens – Clean and placed in clear bag. Towels, curtains okay.",
 		},
 		{
 			"terms": [
-				"Fabric – Clean and placed in clear bag. Rips, holes, single socks okay. No sneakers, boots, belts, or purses.",
+				"Fabric",
 			],
 			"desc": "Fabric – Clean and placed in clear bag. Rips, holes, single socks okay. No sneakers, boots, belts, or purses.",
 		},
 		{
 			"terms": [
-				"Rags – Clean and placed in clear bag. Towels, curtains okay.",
+				"Rags",
 			],
 			"desc": "Rags – Clean and placed in clear bag. Towels, curtains okay.",
 		},
 		{
 			"terms": [
-				"Clothes – Rips, holes, single socks okay. Place clean clothes in clear bag. If clothes are in good condition, please donate them to a thrift store.",
+				"Clothes", "socks",
 			],
 			"desc": "Clothes – Rips, holes, single socks okay. Place clean clothes in clear bag. If clothes are in good condition, please donate them to a thrift store.",
 		},
@@ -341,61 +341,61 @@ const recology = {
 		},
 		{
 			"terms": [
-				"Empty, clean ice cream containers",
+				"ice cream containers",
 			],
 			"desc": "Empty, clean ice cream containers",
 		},
 		{
 			"terms": [
-				"Soup cartons and juice boxes",
+				"Soup cartons", "juice boxes",
 			],
 			"desc": "Soup cartons and juice boxes",
 		},
 		{
 			"terms": [
-				"Paper milk, juice and other beverage cartons",
+				"Paper cartons", "milk cartons", "juice cartons", "beverage cartons",
 			],
 			"desc": "Paper milk, juice and other beverage cartons",
 		},
 		{
 			"terms": [
-				"Bags (paper only)",
+				"Bags", "paper bags",
 			],
 			"desc": "Bags (paper only)",
 		},
 		{
 			"terms": [
-				"Cardboard (non-waxed)",
+				"Cardboard",
 			],
 			"desc": "Cardboard (non-waxed)",
 		},
 		{
 			"terms": [
-				"Cereal boxes and Paperboard (remove plastic liner)",
+				"Cereal boxes", "Paperboard",
 			],
 			"desc": "Cereal boxes and Paperboard (remove plastic liner)",
 		},
 		{
 			"terms": [
-				"Computer and office paper",
+				"Computer paper", "office paper",
 			],
 			"desc": "Computer and office paper",
 		},
 		{
 			"terms": [
-				"Egg cartons (paper)",
+				"Egg cartons", "paper egg cartons",
 			],
 			"desc": "Egg cartons (paper)",
 		},
 		{
 			"terms": [
-				"Envelopes (windows okay)",
+				"Envelopes",
 			],
 			"desc": "Envelopes (windows okay)",
 		},
 		{
 			"terms": [
-				"Junk mail and magazines",
+				"Junk mail", "magazines",
 			],
 			"desc": "Junk mail and magazines",
 		},
@@ -407,7 +407,7 @@ const recology = {
 		},
 		{
 			"terms": [
-				"Packing or Kraft paper",
+				"Packing paper", "Kraft paper",
 			],
 			"desc": "Packing or Kraft paper",
 		},
@@ -425,19 +425,19 @@ const recology = {
 		},
 		{
 			"terms": [
-				"Shredded paper (place in sealed paper bag and label “Shredded Paper”)",
+				"Shredded paper",
 			],
 			"desc": "Shredded paper (place in sealed paper bag and label “Shredded Paper”)",
 		},
 		{
 			"terms": [
-				"Wrapping paper (non-metallic)",
+				"Wrapping paper",
 			],
 			"desc": "Wrapping paper (non-metallic)",
 		},
 		{
 			"terms": [
-				"Glass bottles and jars only (metal caps and lids too)",
+				"Glass bottles", "Glass jars", "bottles", "jars",
 			],
 			"desc": "Glass bottles and jars only (metal caps and lids too)",
 		},
@@ -448,7 +448,7 @@ const recology = {
 				"cat litter",
 			],
 			"desc": "your kitty's doodoo",
-	    },
+		},
 	],
 };
 
@@ -491,77 +491,77 @@ const states = {
 };
 
 const newSessionHandlers = {
-	"LaunchRequest": function() {
+	"LaunchRequest": function () {
 		this.handler.state = states.SEARCHMODE;
 		this.response.speak(WELCOME_MESSAGE).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
-	"SearchByNameIntent": function() {
+	"SearchByNameIntent": function () {
 		console.log("SEARCH INTENT");
 		this.handler.state = states.SEARCHMODE;
 		this.emitWithState("SearchByNameIntent");
 	},
-	"TellMeMoreIntent": function() {
+	"TellMeMoreIntent": function () {
 		this.handler.state = states.SEARCHMODE;
 		this.response.speak(WELCOME_MESSAGE).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
-	"TellMeThisIntent": function() {
+	"TellMeThisIntent": function () {
 		this.handler.state = states.SEARCHMODE;
 		this.emitWithState("SearchByNameIntent");
 	},
-	"SearchByInfoTypeIntent": function() {
+	"SearchByInfoTypeIntent": function () {
 		this.handler.state = states.SEARCHMODE;
 		this.emitWithState("SearchByInfoTypeIntent");
 	},
-	"AMAZON.YesIntent": function() {
+	"AMAZON.YesIntent": function () {
 		this.response.speak(getGenericHelpMessage(recology)).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
-	"AMAZON.NoIntent": function() {
+	"AMAZON.NoIntent": function () {
 		this.response.speak(SHUTDOWN_MESSAGE);
 		this.emit(':responseReady');
 	},
-	"AMAZON.RepeatIntent": function() {
+	"AMAZON.RepeatIntent": function () {
 		this.response.speak(HELP_MESSAGE).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
-	"AMAZON.StopIntent": function() {
+	"AMAZON.StopIntent": function () {
 		this.response.speak(EXIT_SKILL_MESSAGE);
 		this.emit(':responseReady');
 	},
-	"AMAZON.CancelIntent": function() {
+	"AMAZON.CancelIntent": function () {
 		this.response.speak(EXIT_SKILL_MESSAGE);
 		this.emit(':responseReady');
 	},
-	"AMAZON.StartOverIntent": function() {
+	"AMAZON.StartOverIntent": function () {
 		this.handler.state = states.SEARCHMODE;
 		var output = "Ok, starting over." + getGenericHelpMessage(recology);
 		this.response.speak(output).listen(output);
 		this.emit(':responseReady');
 	},
-	"AMAZON.HelpIntent": function() {
+	"AMAZON.HelpIntent": function () {
 		this.response.speak(HELP_MESSAGE + getGenericHelpMessage(recology)).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
-	"SessionEndedRequest": function() {
+	"SessionEndedRequest": function () {
 		this.emit("AMAZON.StopIntent");
 	},
-	"Unhandled": function() {
+	"Unhandled": function () {
 		this.handler.state = states.SEARCHMODE;
 		this.emitWithState("SearchByNameIntent");
 	}
 };
 let startSearchHandlers = Alexa.CreateStateHandler(states.SEARCHMODE, {
-	"AMAZON.YesIntent": function() {
+	"AMAZON.YesIntent": function () {
 		this.response.speak(NEW_SEARCH_MESSAGE).listen(NEW_SEARCH_MESSAGE);
 		this.emit(':responseReady');
 	},
-	"AMAZON.NoIntent": function() {
+	"AMAZON.NoIntent": function () {
 		this.response.speak(SHUTDOWN_MESSAGE);
 		this.emit(':responseReady');
 	},
-	"AMAZON.RepeatIntent": function() {
+	"AMAZON.RepeatIntent": function () {
 		let output;
 		if (this.attributes.lastSearch) {
 			output = this.attributes.lastSearch.lastSpeech;
@@ -573,31 +573,31 @@ let startSearchHandlers = Alexa.CreateStateHandler(states.SEARCHMODE, {
 		}
 		this.emit(":ask", output, output);
 	},
-	"SearchByItemIntent": function() {
+	"SearchByItemIntent": function () {
 		searchByItemIntentHandler.call(this);
 	},
-	"AMAZON.HelpIntent": function() {
+	"AMAZON.HelpIntent": function () {
 		this.response.speak(getGenericHelpMessage(recology)).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
-	"AMAZON.StopIntent": function() {
+	"AMAZON.StopIntent": function () {
 		this.response.speak(EXIT_SKILL_MESSAGE);
 		this.emit(':responseReady');
 	},
-	"AMAZON.CancelIntent": function() {
+	"AMAZON.CancelIntent": function () {
 		this.response.speak(EXIT_SKILL_MESSAGE);
 		this.emit(':responseReady');
 	},
-	"AMAZON.StartOverIntent": function() {
+	"AMAZON.StartOverIntent": function () {
 		this.handler.state = states.SEARCHMODE;
 		var output = "Ok, starting over." + getGenericHelpMessage(recology);
 		this.response.speak(output).listen(output);
 		this.emit(':responseReady');
 	},
-	"SessionEndedRequest": function() {
+	"SessionEndedRequest": function () {
 		this.emit("AMAZON.StopIntent");
 	},
-	"Unhandled": function() {
+	"Unhandled": function () {
 		console.log("Unhandled intent in startSearchHandlers");
 		this.response.speak(SEARCH_STATE_HELP_MESSAGE).listen(SEARCH_STATE_HELP_MESSAGE);
 		this.emit(':responseReady');
@@ -749,7 +749,7 @@ function generateSpecificInfoMessage(slots, person) {
 	return optimizeForSpeech(sentence);
 }
 
-exports.handler = function(event, context, callback) {
+exports.handler = function (event, context, callback) {
 	let alexa = Alexa.handler(event, context);
 	alexa.appId = APP_ID;
 	alexa.registerHandlers(newSessionHandlers, startSearchHandlers);
@@ -819,7 +819,7 @@ function optimizeForSpeech(str) {
 
 function isSlotValid(request, slotName) {
 	let slot = request.intent.slots[slotName];
-	console.log("request = "+JSON.stringify(request)); //uncomment if you want to see the request
+	console.log("request = " + JSON.stringify(request)); //uncomment if you want to see the request
 	let slotValue;
 
 	//if we have a slot, get the text and store it into speechOutput
