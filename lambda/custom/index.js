@@ -15,33 +15,460 @@ const APP_ID = undefined;
 //TODO: Replace this data with your own.
 //======================================================================================================
 
-const data=[
-	{firstName:"dave",lastName:"isbitski",title:"Chief Alexa evangelist",cityName:"philadelphia",twitter:"thedavedev",saytwitter:"the dave dev",github:"disbitski",saygithub:"d, isbitski",linkedin:"https://www.linkedin.com/in/davidisbitski",saylinkedin:"david isbitski",joinDate:"October 2015",gender:"m"},
-	{firstName:"paul",lastName:"cutsinger",title:"Head of Voice Design Education on Amazon Alexa",cityName:"seattle",twitter:"paulcutsinger",saytwitter:"paul cutsinger",github:"paulcutsinger",saygithub:"paulcutsinger",linkedin:"https://www.linkedin.com/in/paulcutsinger",saylinkedin:"paul cutsinger",joinDate:"January 2016",gender:"m"},
-	{firstName:"amit",lastName:"jotwani",title:"an Alexa AI and machine learning evangelist",cityName:"new york",twitter:"amit",saytwitter:"amit",github:"ajot",saygithub:"a, jot",linkedin:"https://www.linkedin.com/in/ajotwani",saylinkedin:"a jotwani",joinDate:"February 2016",gender:"m"},
-	{firstName:"jeff",lastName:"blankenburg",title:"an Alexa evangelist",cityName:"columbus",twitter:"jeffblankenburg",saytwitter:"jeff blankenburg",github:"jeffblankenburg",saygithub:"jeffblankenburg",linkedin:"https://www.linkedin.com/in/jeffblankenburg",saylinkedin:"jeff blankenburg",joinDate:"September 2016",gender:"m"},
-	{firstName:"rob",lastName:"mccauley",title:"a Solutions Architect on the Alexa Skills Team",cityName:"boston",twitter:"robmccauley",saytwitter:"rob mccauley",github:"robm26",saygithub:"rob m 26",linkedin:"https://www.linkedin.com/in/robm26",saylinkedin:"rob m 26",joinDate:"February 2016",gender:"m"},
-	{firstName:"memo",lastName:"doring",title:"a Solutions Architect on the Alexa Skills Team",cityName:"seattle",twitter:"memodoring",saytwitter:"memo doring",github:"memodoring",saygithub:"memo doring",linkedin:"https://www.linkedin.com/in/guillermodoring",saylinkedin:"guillermo doring",joinDate:"April 2016",gender:"m"},
-	{firstName:"jen",lastName:"gilbert",title:"a Marketing Manager on the Alexa Skills team",cityName:"seattle",twitter:"thejengil",saytwitter:"the jengil",github:"jengilbert",saygithub:"jen gilbert",linkedin:"https://www.linkedin.com/in/jenpaullgilbert/",saylinkedin:"jen paull gilbert",joinDate:"June 2016",gender:"f"}
-];
+const recology = {
+	compost: [
+		{
+			"terms": ["bread", "grains", "pasta"],
+			"desc": "Bread, grains and pasta",
+		},
+		{
+			"terms": ["coffee grounds"],
+			"desc": "Coffee grounds with paper filter",
+		},
+		{
+			"terms": ["dairy", "cheese", "yoghurt"],
+			"desc": "Dairy",
+		},
+		{
+			"terms": ["eggshells", "eggs"],
+			"desc": "Eggshells and eggs",
+		},
+		{
+			"terms": ["fruit", "apple", "pear"],
+			"desc": "Fruit (pits and peels)",
+		},
+		{
+			"terms": [
+				"leftovers",
+				"food",
+				"spoiled food",
+			],
+			"desc": "Leftovers and spoiled food",
+		},
+		{
+			"terms": [
+				"Meat",
+				"bones",
+			],
+			"desc": "Meat (including bones)",
+		},
+		{
+			"terms": [
+				"Seafood",
+				"shellfish",
+			],
+			"desc": "Seafood (including shellfish)",
+		},
+		{
+			"terms": [
+				"Tea",
+				"tea bags",
+			],
+			"desc": "Tea and tea bags",
+		},
+		{
+			"terms": [
+				"Vegetables",
+			],
+			"desc": "Vegetables",
+		},
+		{
+			"terms": [
+				"Coffee filters",
+			],
+			"desc": "Coffee filters",
+		},
+		{
+			"terms": [
+				"Greasy pizza boxes",
+			],
+			"desc": "Greasy pizza boxes",
+		},
+		{
+			"terms": [
+				"Paper plates",
+			],
+			"desc": "Paper plates",
+		},
+		{
+			"terms": [
+				"Paper bags, napkins, tissues and towels",
+			],
+			"desc": "Paper bags, napkins, tissues and towels",
+		},
+		{
+			"terms": [
+				"Paper take-out boxes and containers (metal handle OK)",
+			],
+			"desc": "Paper take-out boxes and containers (metal handle OK)",
+		},
+		{
+			"terms": [
+				"Tissues",
+			],
+			"desc": "Tissues",
+		},
+		{
+			"terms": [
+				"Branches and brush",
+			],
+			"desc": "Branches and brush",
+		},
+		{
+			"terms": [
+				"Flowers and floral trimmings",
+			],
+			"desc": "Flowers and floral trimmings",
+		},
+		{
+			"terms": [
+				"Grasses and weeds",
+			],
+			"desc": "Grasses and weeds",
+		},
+		{
+			"terms": [
+				"Leaves",
+			],
+			"desc": "Leaves",
+		},
+		{
+			"terms": [
+				"Tree trimmings (less than 6 inches in diameter and 4 feet long)",
+			],
+			"desc": "Tree trimmings (less than 6 inches in diameter and 4 feet long)",
+		},
+		{
+			"terms": [
+				"Cotton balls and cotton swabs",
+			],
+			"desc": "Cotton balls and cotton swabs",
+		},
+		{
+			"terms": [
+				"Hair, fur, and feathers (non-synthetic)",
+			],
+			"desc": "Hair, fur, and feathers (non-synthetic)",
+		},
+		{
+			"terms": [
+				"Plastic and cutlery clearly labeled “Compostable”",
+			],
+			"desc": "Plastic and cutlery clearly labeled “Compostable” (green stripe or sticker to allow for easy identification)",
+		},
+		{
+			"terms": [
+				"Vegetable wood crates", "wood crates", "Vegetable crates", "wooden crates"
+			],
+			"desc": "Vegetable wood crates (metal wire is okay)",
+		},
+		{
+			"terms": [
+				"Waxed cardboard",
+			],
+			"desc": "Waxed cardboard",
+		},
+		{
+			"terms": [
+				"Wood – small pieces of lumber or sawdust from clean wood only (no plywood, press board, painted, stained or treated wood)",
+			],
+			"desc": "Wood – small pieces of lumber or sawdust from clean wood only (no plywood, press board, painted, stained or treated wood)",
+		},
+		{
+			"terms": [
+				"Wooden chop sticks",
+			],
+			"desc": "Wooden chop sticks",
+		},
+		{
+			"terms": [
+				"Corks – natural (drop in barrels at Whole Foods)",
+			],
+			"desc": "Corks – natural (drop in barrels at Whole Foods)",
+		},
+	],
+	recycling: [
+		{
+			"terms": [
+				"Aluminum cans",
+			],
+			"desc": "Aluminum cans",
+		},
+		{
+			"terms": [
+				"Aluminum foil",
+				"Aluminum trays",
+			],
+			"desc": "Aluminum foil and trays (ball foil up to softball size)",
+		},
+		{
+			"terms": [
+				"Caps and lids from bottles, jars and steel (tin) cans",
+			],
+			"desc": "Caps and lids from bottles, jars and steel (tin) cans",
+		},
+		{
+			"terms": [
+				"Paint cans (must be empty or dry)",
+			],
+			"desc": "Paint cans (must be empty or dry)",
+		},
+		{
+			"terms": [
+				"Spray cans (must be empty)",
+			],
+			"desc": "Spray cans (must be empty)",
+		},
+		{
+			"terms": [
+				"Steel (tin) cans",
+			],
+			"desc": "Steel (tin) cans",
+		},
+		{
+			"terms": [
+				"Clean, dry, empty plastic bags inside a clear plastic bag (the size roughly of a basketball)",
+			],
+			"desc": "Clean, dry, empty plastic bags inside a clear plastic bag (the size roughly of a basketball)",
+		},
+		{
+			"terms": [
+				"Bottles (leave caps on)",
+			],
+			"desc": "Bottles (leave caps on)",
+		},
+		{
+			"terms": [
+				"Buckets (metal handle ok)",
+			],
+			"desc": "Buckets (metal handle ok)",
+		},
+		{
+			"terms": [
+				"CD’s, DVD’s, CDROM and Cases (remove paper insert)",
+			],
+			"desc": "CD’s, DVD’s, CDROM and Cases (remove paper insert)",
+		},
+		{
+			"terms": [
+				"Coffee cup lids",
+			],
+			"desc": "Coffee cup lids",
+		},
+		{
+			"terms": [
+				"Containers and clamshells",
+			],
+			"desc": "Containers and clamshells",
+		},
+		{
+			"terms": [
+				"Corks – plastic",
+			],
+			"desc": "Corks – plastic",
+		},
+		{
+			"terms": [
+				"Cups and plates (plastic only, no Styrofoam)",
+			],
+			"desc": "Cups and plates (plastic only, no Styrofoam)",
+		},
+		{
+			"terms": [
+				"Flower pots and trays – plastic",
+			],
+			"desc": "Flower pots and trays – plastic",
+		},
+		{
+			"terms": [
+				"Laundry detergent bottles",
+			],
+			"desc": "Laundry detergent bottles",
+		},
+		{
+			"terms": [
+				"Molded plastic packaging",
+			],
+			"desc": "Molded plastic packaging",
+		},
+		{
+			"terms": [
+				"Toys (no electronics, metal or batteries)",
+			],
+			"desc": "Toys (no electronics, metal or batteries)",
+		},
+		{
+			"terms": [
+				"Tubs and lids (i.e.,: yogurt containers and Tupperware)",
+			],
+			"desc": "Tubs and lids (i.e.,: yogurt containers and Tupperware)",
+		},
+		{
+			"terms": [
+				"Utensils – plastic",
+			],
+			"desc": "Utensils – plastic",
+		},
+		{
+			"terms": [
+				"Linens – Clean and placed in clear bag. Towels, curtains okay.",
+			],
+			"desc": "Linens – Clean and placed in clear bag. Towels, curtains okay.",
+		},
+		{
+			"terms": [
+				"Fabric – Clean and placed in clear bag. Rips, holes, single socks okay. No sneakers, boots, belts, or purses.",
+			],
+			"desc": "Fabric – Clean and placed in clear bag. Rips, holes, single socks okay. No sneakers, boots, belts, or purses.",
+		},
+		{
+			"terms": [
+				"Rags – Clean and placed in clear bag. Towels, curtains okay.",
+			],
+			"desc": "Rags – Clean and placed in clear bag. Towels, curtains okay.",
+		},
+		{
+			"terms": [
+				"Clothes – Rips, holes, single socks okay. Place clean clothes in clear bag. If clothes are in good condition, please donate them to a thrift store.",
+			],
+			"desc": "Clothes – Rips, holes, single socks okay. Place clean clothes in clear bag. If clothes are in good condition, please donate them to a thrift store.",
+		},
+		{
+			"terms": [
+				"paper cups", "coffee cups",
+			],
+			"desc": "Empty, clean coffee cups",
+		},
+		{
+			"terms": [
+				"Empty, clean ice cream containers",
+			],
+			"desc": "Empty, clean ice cream containers",
+		},
+		{
+			"terms": [
+				"Soup cartons and juice boxes",
+			],
+			"desc": "Soup cartons and juice boxes",
+		},
+		{
+			"terms": [
+				"Paper milk, juice and other beverage cartons",
+			],
+			"desc": "Paper milk, juice and other beverage cartons",
+		},
+		{
+			"terms": [
+				"Bags (paper only)",
+			],
+			"desc": "Bags (paper only)",
+		},
+		{
+			"terms": [
+				"Cardboard (non-waxed)",
+			],
+			"desc": "Cardboard (non-waxed)",
+		},
+		{
+			"terms": [
+				"Cereal boxes and Paperboard (remove plastic liner)",
+			],
+			"desc": "Cereal boxes and Paperboard (remove plastic liner)",
+		},
+		{
+			"terms": [
+				"Computer and office paper",
+			],
+			"desc": "Computer and office paper",
+		},
+		{
+			"terms": [
+				"Egg cartons (paper)",
+			],
+			"desc": "Egg cartons (paper)",
+		},
+		{
+			"terms": [
+				"Envelopes (windows okay)",
+			],
+			"desc": "Envelopes (windows okay)",
+		},
+		{
+			"terms": [
+				"Junk mail and magazines",
+			],
+			"desc": "Junk mail and magazines",
+		},
+		{
+			"terms": [
+				"Newspapers",
+			],
+			"desc": "Newspapers",
+		},
+		{
+			"terms": [
+				"Packing or Kraft paper",
+			],
+			"desc": "Packing or Kraft paper",
+		},
+		{
+			"terms": [
+				"Phonebooks",
+			],
+			"desc": "Phonebooks",
+		},
+		{
+			"terms": [
+				"Sticky notes",
+			],
+			"desc": "Sticky notes",
+		},
+		{
+			"terms": [
+				"Shredded paper (place in sealed paper bag and label “Shredded Paper”)",
+			],
+			"desc": "Shredded paper (place in sealed paper bag and label “Shredded Paper”)",
+		},
+		{
+			"terms": [
+				"Wrapping paper (non-metallic)",
+			],
+			"desc": "Wrapping paper (non-metallic)",
+		},
+		{
+			"terms": [
+				"Glass bottles and jars only (metal caps and lids too)",
+			],
+			"desc": "Glass bottles and jars only (metal caps and lids too)",
+		},
+	],
+	landfill: [
+		{
+			"terms": [
+				"cat litter",
+			],
+			"desc": "your kitty's doodoo",
+	    },
+	],
+};
 
 //======================================================================================================
 //TODO: Replace these text strings to edit the welcome and help messages
 //======================================================================================================
 
-const skillName = "Team Lookup";
+const skillName = "Trash Panda";
 
 //This is the welcome message for when a user starts the skill without a specific intent.
-const WELCOME_MESSAGE = "Welcome to " + skillName + "Learn about Alexa Evangelists and Solutions Architects. For example, " + getGenericHelpMessage(data);
+const WELCOME_MESSAGE = "Welcome to " + skillName + " Learn how to recycle common household waste. For example, " + getGenericHelpMessage(recology);
 
 //This is the message a user will hear when they ask Alexa for help in your skill.
 const HELP_MESSAGE = "I can help you find Alexa Evangelists and Solutions Architects. ";
 
 //This is the message a user will hear when they begin a new search
-const NEW_SEARCH_MESSAGE = getGenericHelpMessage(data);
+const NEW_SEARCH_MESSAGE = getGenericHelpMessage(recology);
 
 //This is the message a user will hear when they ask Alexa for help while in the SEARCH state
-const SEARCH_STATE_HELP_MESSAGE = getGenericHelpMessage(data);
+const SEARCH_STATE_HELP_MESSAGE = getGenericHelpMessage(recology);
 
 const DESCRIPTION_STATE_HELP_MESSAGE = "Here are some things you can say: Tell me more, or give me his or her contact info";
 
@@ -61,14 +488,12 @@ const EXIT_SKILL_MESSAGE = "Ok.";
 
 const states = {
 	SEARCHMODE: "_SEARCHMODE",
-	DESCRIPTION: "_DESCRIPTION",
-	MULTIPLE_RESULTS: "_MULTIPLE_RESULTS"
 };
 
 const newSessionHandlers = {
 	"LaunchRequest": function() {
 		this.handler.state = states.SEARCHMODE;
-		this.response.speak(WELCOME_MESSAGE).listen(getGenericHelpMessage(data));
+		this.response.speak(WELCOME_MESSAGE).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
 	"SearchByNameIntent": function() {
@@ -78,7 +503,7 @@ const newSessionHandlers = {
 	},
 	"TellMeMoreIntent": function() {
 		this.handler.state = states.SEARCHMODE;
-		this.response.speak(WELCOME_MESSAGE).listen(getGenericHelpMessage(data));
+		this.response.speak(WELCOME_MESSAGE).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
 	"TellMeThisIntent": function() {
@@ -90,7 +515,7 @@ const newSessionHandlers = {
 		this.emitWithState("SearchByInfoTypeIntent");
 	},
 	"AMAZON.YesIntent": function() {
-		this.response.speak(getGenericHelpMessage(data)).listen(getGenericHelpMessage(data));
+		this.response.speak(getGenericHelpMessage(recology)).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
 	"AMAZON.NoIntent": function() {
@@ -98,7 +523,7 @@ const newSessionHandlers = {
 		this.emit(':responseReady');
 	},
 	"AMAZON.RepeatIntent": function() {
-		this.response.speak(HELP_MESSAGE).listen(getGenericHelpMessage(data));
+		this.response.speak(HELP_MESSAGE).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
 	"AMAZON.StopIntent": function() {
@@ -111,12 +536,12 @@ const newSessionHandlers = {
 	},
 	"AMAZON.StartOverIntent": function() {
 		this.handler.state = states.SEARCHMODE;
-		var output = "Ok, starting over." + getGenericHelpMessage(data);
+		var output = "Ok, starting over." + getGenericHelpMessage(recology);
 		this.response.speak(output).listen(output);
 		this.emit(':responseReady');
 	},
 	"AMAZON.HelpIntent": function() {
-		this.response.speak(HELP_MESSAGE + getGenericHelpMessage(data)).listen(getGenericHelpMessage(data));
+		this.response.speak(HELP_MESSAGE + getGenericHelpMessage(recology)).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
 	"SessionEndedRequest": function() {
@@ -138,35 +563,21 @@ let startSearchHandlers = Alexa.CreateStateHandler(states.SEARCHMODE, {
 	},
 	"AMAZON.RepeatIntent": function() {
 		let output;
-		if(this.attributes.lastSearch){
+		if (this.attributes.lastSearch) {
 			output = this.attributes.lastSearch.lastSpeech;
 			console.log("repeating last speech");
 		}
-		else{
-			output = getGenericHelpMessage(data);
+		else {
+			output = getGenericHelpMessage(recology);
 			console.log("no last speech availble. outputting standard help message.");
 		}
-		this.emit(":ask",output, output);
+		this.emit(":ask", output, output);
 	},
-	"SearchByNameIntent": function() {
-		searchByNameIntentHandler.call(this);
-	},
-	"SearchByCityIntent": function() {
-		searchByCityIntentHandler.call(this);
-	},
-	"SearchByInfoTypeIntent": function() {
-		searchByInfoTypeIntentHandler.call(this);
-	},
-	"TellMeThisIntent": function() {
-		this.handler.state = states.DESCRIPTION;
-		this.emitWithState("TellMeThisIntent");
-	},
-	"TellMeMoreIntent": function() {
-		this.handler.state = states.DESCRIPTION;
-		this.emitWithState("TellMeMoreIntent");
+	"SearchByItemIntent": function() {
+		searchByItemIntentHandler.call(this);
 	},
 	"AMAZON.HelpIntent": function() {
-		this.response.speak(getGenericHelpMessage(data)).listen(getGenericHelpMessage(data));
+		this.response.speak(getGenericHelpMessage(recology)).listen(getGenericHelpMessage(recology));
 		this.emit(':responseReady');
 	},
 	"AMAZON.StopIntent": function() {
@@ -179,7 +590,7 @@ let startSearchHandlers = Alexa.CreateStateHandler(states.SEARCHMODE, {
 	},
 	"AMAZON.StartOverIntent": function() {
 		this.handler.state = states.SEARCHMODE;
-		var output = "Ok, starting over." + getGenericHelpMessage(data);
+		var output = "Ok, starting over." + getGenericHelpMessage(recology);
 		this.response.speak(output).listen(output);
 		this.emit(':responseReady');
 	},
@@ -192,217 +603,27 @@ let startSearchHandlers = Alexa.CreateStateHandler(states.SEARCHMODE, {
 		this.emit(':responseReady');
 	}
 });
-let multipleSearchResultsHandlers = Alexa.CreateStateHandler(states.MULTIPLE_RESULTS, {
-
-	"AMAZON.StartOverIntent": function() {
-		this.handler.state = states.SEARCHMODE;
-		var output = "Ok, starting over." + getGenericHelpMessage(data);
-		this.response.speak(output).listen(output);
-		this.emit(':responseReady');
-	},
-	"AMAZON.YesIntent": function() {
-		var output = "Hmm. I think you said - yes, but can you please say the name of the person you'd like to learn more about?";
-		this.response.speak(output).listen(output);
-		this.emit(':responseReady');
-	},
-	"AMAZON.NoIntent": function() {
-		this.response.speak(SHUTDOWN_MESSAGE);
-		this.emit(':responseReady');
-	},
-	"AMAZON.RepeatIntent": function() {
-		this.response.speak(this.attributes.lastSearch.lastSpeech).listen(this.attributes.lastSearch.lastSpeech);
-		this.emit(':responseReady');
-	},
-	"SearchByNameIntent": function() {
-		let slots = this.event.request.intent.slots;
-		let firstName = isSlotValid(this.event.request, "firstName");
-		let lastName = isSlotValid(this.event.request, "lastName");
-		let cityName = isSlotValid(this.event.request, "cityName");
-		let infoType = isSlotValid(this.event.request, "infoType");
-
-		console.log("firstName:" + firstName);
-		console.log("firstName:" + lastName);
-		console.log("firstName:" + cityName);
-		console.log("firstName:" + infoType);
-		console.log("Intent Name:" + this.event.request.intent.name);
-
-		let canSearch = figureOutWhichSlotToSearchBy(firstName,lastName,cityName);
-		console.log("Multiple results found. canSearch is set to = " + canSearch);
-		let speechOutput;
-
-		if (canSearch)
-			var searchQuery = slots[canSearch].value;
-		var searchResults = searchDatabase(this.attributes.lastSearch.results, searchQuery, canSearch);
-		var lastSearch;
-		var output;
-
-		if (searchResults.count > 1) { //multiple results found again
-			console.log("multiple results were found again");
-			this.handler.state = states.MULTIPLE_RESULTS;
-			output = this.attributes.lastSearch.lastSpeech;
-			this.response.speak(output).listen(output);
-		} else if (searchResults.count == 1) { //one result found
-			this.attributes.lastSearch = searchResults;
-			lastSearch = this.attributes.lastSearch;
-			this.handler.state = states.DESCRIPTION;
-			output = generateSearchResultsMessage(searchQuery,searchResults.results);
-			this.attributes.lastSearch.lastSpeech = output;
-			this.response.speak(output).listen(output);
-
-		} else { //no match found
-			lastSearch = this.attributes.lastSearch;
-			let listOfPeopleFound = loopThroughArrayOfObjects(lastSearch.results);
-			speechOutput = MULTIPLE_RESULTS_STATE_HELP_MESSAGE + ", " + listOfPeopleFound;
-			this.response.speak(speechOutput).listen(speechOutput);
-		}
-		this.emit(':responseReady');
-	},
-	"SearchByCityIntent": function() {
-		this.handler.state = states.SEARCHMODE;
-		this.emitWithState("SearchByCityIntent");
-	},
-	"AMAZON.HelpIntent": function() {
-		this.response.speak(MULTIPLE_RESULTS_STATE_HELP_MESSAGE).listen(MULTIPLE_RESULTS_STATE_HELP_MESSAGE);
-		this.emit(':responseReady');
-	},
-	"AMAZON.StopIntent": function() {
-		this.response.speak(EXIT_SKILL_MESSAGE);
-		this.emit(':responseReady');
-	},
-	"AMAZON.CancelIntent": function() {
-		this.response.speak(EXIT_SKILL_MESSAGE);
-		this.emit(':responseReady');
-	},
-	"SessionEndedRequest": function() {
-		this.emit("AMAZON.StopIntent");
-	},
-	"Unhandled": function() {
-		console.log("Unhandled intent in multipleSearchResultsHandlers");
-		this.response.speak(MULTIPLE_RESULTS_STATE_HELP_MESSAGE).listen(MULTIPLE_RESULTS_STATE_HELP_MESSAGE);
-		this.emit(':responseReady');
-	}
-});
-let descriptionHandlers = Alexa.CreateStateHandler(states.DESCRIPTION, {
-	"TellMeMoreIntent": function() {
-		let person;
-		let speechOutput;
-		let repromptSpeech;
-		let cardContent;
-
-		if(this.attributes.lastSearch){
-			person = this.attributes.lastSearch.results[0];
-			cardContent = generateCard(person); //calling the helper function to generate the card content that will be sent to the Alexa app.
-			speechOutput = generateTellMeMoreMessage(person);
-			repromptSpeech = "Would you like to find another evangelist? Say yes or no";
-
-			console.log("the contact you're trying to find more info about is " + person.firstName);
-			this.handler.state = states.SEARCHMODE;
-			this.attributes.lastSearch.lastSpeech = speechOutput;
-			this.response.cardRenderer(cardContent.title, cardContent.body, cardContent.image);
-			this.response.speak(speechOutput).listen(repromptSpeech);
-		}
-		else{
-			speechOutput = getGenericHelpMessage(data);
-			repromptSpeech = getGenericHelpMessage(data);
-			this.handler.state = states.SEARCHMODE;
-			this.response.speak(speechOutput).listen(repromptSpeech);
-		}
-
-		this.emit(':responseReady');
-	},
-	"TellMeThisIntent": function() {
-		let slots = this.event.request.intent.slots;
-		let person = this.attributes.lastSearch.results[0];
-		let infoType = isSlotValid(this.event.request, "infoType");
-		let speechOutput;
-		let repromptSpeech;
-		let cardContent;
-
-		console.log(isInfoTypeValid("github"));
-
-		if(this.attributes.lastSearch && isInfoTypeValid(infoType)){
-			person =  this.attributes.lastSearch.results[0];
-			cardContent = generateCard(person);
-			speechOutput = generateSpecificInfoMessage(slots,person);
-			repromptSpeech = "Would you like to find another evangelist? Say yes or no";
-			this.handler.state = states.SEARCHMODE;
-			this.attributes.lastSearch.lastSpeech = speechOutput;
-			this.response.cardRenderer(cardContent.title, cardContent.body, cardContent.image);
-			this.response.speak(speechOutput).listen(repromptSpeech);
-		} else {
-			//not a valid slot. no card needs to be set up. respond with simply a voice response.
-			speechOutput = generateSearchHelpMessage(person.gender);
-			repromptSpeech = "You can ask me - what's " + genderize("his-her", person.gender) + " twitter, or give me " + genderize("his-her", person.gender) + " git-hub username";
-			this.attributes.lastSearch.lastSpeech = speechOutput;
-			this.handler.state = states.SEARCHMODE;
-			this.response.speak(speechOutput).listen(repromptSpeech);
-		}
-		this.emit(':responseReady');
-	},
-	"SearchByNameIntent": function() {
-		searchByNameIntentHandler.call(this);
-	},
-	"SearchByCityIntent": function() {
-		searchByCityIntentHandler.call(this);
-	},
-	"AMAZON.HelpIntent": function() {
-		var person = this.attributes.lastSearch.results[0];
-		this.response.speak(generateNextPromptMessage(person,"current")).listen(generateNextPromptMessage(person,"current"));
-		this.emit(':responseReady');
-	},
-	"AMAZON.StopIntent": function() {
-		this.response.speak(EXIT_SKILL_MESSAGE);
-		this.emit(':responseReady');
-	},
-	"AMAZON.CancelIntent": function() {
-		this.response.speak(EXIT_SKILL_MESSAGE);
-		this.emit(':responseReady');
-	},
-	"AMAZON.NoIntent": function() {
-		this.response.speak(SHUTDOWN_MESSAGE);
-		this.emit(':responseReady');
-	},
-	"AMAZON.YesIntent": function() {
-		this.emit("TellMeMoreIntent");
-	},
-	"AMAZON.RepeatIntent": function() {
-		this.response.speak(this.attributes.lastSearch.lastSpeech).listen(this.attributes.lastSearch.lastSpeech);
-		this.emit(':responseReady');
-	},
-	"AMAZON.StartOverIntent": function() {
-		this.handler.state = states.SEARCHMODE;
-		var output = "Ok, starting over." + getGenericHelpMessage(data);
-		this.response.speak(output).listen(output);
-		this.emit(':responseReady');
-	},
-	"SessionEndedRequest": function() {
-		this.emit("AMAZON.StopIntent");
-	},
-	"Unhandled": function() {
-		let person = this.attributes.lastSearch.results[0];
-		console.log("Unhandled intent in DESCRIPTION state handler");
-		this.response.speak("Sorry, I don't know that" + generateNextPromptMessage(person,"general"))
-		.listen("Sorry, I don't know that" + generateNextPromptMessage(person,"general"));
-		this.emit(':responseReady');
-	}
-});
 
 // ------------------------- END of Intent Handlers  ---------------------------------
 
-function searchDatabase(dataset, searchQuery, searchType) {
+function searchDatabase(dataset, searchQuery) {
 	let matchFound = false;
 	let results = [];
 
 	//beginning search
 	for (let i = 0; i < dataset.length; i++) {
-		if (sanitizeSearchQuery(searchQuery) == dataset[i][searchType]) {
-			results.push(dataset[i]);
-			matchFound = true;
+		let searchTerms = dataset[i].terms;
+		for (let j = 0; j < searchTerms.length; j++) {
+			if (sanitizeSearchQuery(searchQuery) == sanitizeSearchQuery(searchTerms[j])) {
+				results.push(dataset[i].desc);
+				matchFound = true;
+				break;
+			}
 		}
 		if ((i == dataset.length - 1) && (matchFound == false)) {
 			//this means that we are on the last record, and no match was found
 			matchFound = false;
-			console.log("no match was found using " + searchType);
+			console.log("no match was found using " + searchQuery);
 			//if more than searchable items were provided, set searchType to the next item, and set i=0
 			//ideally you want to start search with lastName, then firstname, and then cityName
 		}
@@ -413,303 +634,125 @@ function searchDatabase(dataset, searchQuery, searchType) {
 	};
 }
 
-function figureOutWhichSlotToSearchBy(firstName,lastName,cityName) {
-	if (lastName){
-		console.log("search by lastName");
-		return "lastName";
-	}
-	else if (!lastName && firstName){
-		console.log("search by firstName");
-		return "firstName";
-	}
-	else if (!lastName && !firstName && cityName){
-		console.log("search by cityName");
-		return "cityName";
-	}
-	else{
-		console.log("no valid slot provided. can't search.");
-		return false;
-	}
-}
+function searchByItemIntentHandler() {
+	let itemName = isSlotValid(this.event.request, "itemName");
+	let output = "";
 
-function searchByNameIntentHandler(){
-	let firstName = isSlotValid(this.event.request, "firstName");
-	let lastName = isSlotValid(this.event.request, "lastName");
-	let cityName = isSlotValid(this.event.request, "cityName");
-	let infoType = isSlotValid(this.event.request, "infoType");
+	if (itemName) {
+		console.log("item: " + itemName);
 
-	let canSearch = figureOutWhichSlotToSearchBy(firstName,lastName,cityName);
-	console.log("canSearch is set to = " + canSearch);
+		let compostResults = searchDatabase(recology.compost, itemName);
+		let recyclingResults = searchDatabase(recology.recycling, itemName);
+		let landfillResults = searchDatabase(recology.landfill, itemName);
 
-	if (canSearch){
-		var searchQuery = this.event.request.intent.slots[canSearch].value;
-		var searchResults = searchDatabase(data, searchQuery, canSearch);
-
-		//saving lastSearch results to the current session
-		var lastSearch = this.attributes.lastSearch = searchResults;
-		var output;
-
-		//saving last intent to session attributes
-		this.attributes.lastSearch.lastIntent = "SearchByNameIntent";
-
-		if (searchResults.count > 1) { //multiple results found
-			console.log("Search complete. Multiple results were found");
-			let listOfPeopleFound = loopThroughArrayOfObjects(lastSearch.results);
-			output = generateSearchResultsMessage(searchQuery,searchResults.results) + listOfPeopleFound + ". Who would you like to learn more about?";
-			this.handler.state = states.MULTIPLE_RESULTS; // change state to MULTIPLE_RESULTS
-			this.attributes.lastSearch.lastSpeech = output;
-			this.response.speak(output).listen(output);
-		} else if (searchResults.count == 1) { //one result found
-			this.handler.state = states.DESCRIPTION; // change state to description
-			console.log("one match was found");
-			if (infoType) {
-				//if a specific infoType was requested, redirect to specificInfoIntent
-				console.log("infoType was provided as well");
-				this.emitWithState("TellMeThisIntent");
-			}
-			else{
-				console.log("no infoType was provided.");
-				output = generateSearchResultsMessage(searchQuery,searchResults.results);
-				this.attributes.lastSearch.lastSpeech = output;
-				this.response.speak(output).listen(output);
-			}
+		if (compostResults.count == 0 && recyclingResults.count == 0 && landfillResults.count == 0) {
+			output = "Sorry, I don't know how to dispose of " + itemName;
 		}
-		else{//no match found
-			console.log("no match found");
-			console.log("searchQuery was  = " + searchQuery);
-			console.log("searchResults.results was  = " + searchResults);
-			output = generateSearchResultsMessage(searchQuery,searchResults.results);
-			this.attributes.lastSearch.lastSpeech = output;
-			// this.emit(":ask", generateSearchResultsMessage(searchQuery,searchResults.results));
-			this.response.speak(output).listen(output);
+
+		if (compostResults.count > 0) {
+			console.log(JSON.stringify(compostResults));
+			output += "You can compost " + compostResults.results.join(" and ");
+		}
+		if (recyclingResults.count > 0) {
+			console.log(JSON.stringify(recyclingResults));
+			output += "You can recycle " + recyclingResults.results.join(" and ");
+		}
+		if (landfillResults.count > 0) {
+			console.log(JSON.stringify(landfillResults));
+			output += "You have to put the following in the landfill: " + landfillResults.results.join(" and ");
 		}
 	}
 	else {
-		console.log("no searchable slot was provided");
-		console.log("searchQuery was  = " + searchQuery);
-		console.log("searchResults.results was  = " + searchResults);
-
-		this.response.speak(generateSearchResultsMessage(searchQuery,false)).listen(generateSearchResultsMessage(searchQuery,false));
+		output = "Sorry, I didn't catch that.";
 	}
 
+
+	this.response.speak(output).listen(output);
 	this.emit(':responseReady');
 }
 
-function searchByCityIntentHandler(){
-	var slots = this.event.request.intent.slots;
-	var cityName = isSlotValid(this.event.request, "cityName");
-
-	if (cityName){
-		var searchQuery = slots.cityName.value;
-		console.log("will begin search with  " + slots.cityName.value + " in cityName");
-		var searchResults = searchDatabase(data, searchQuery, "cityName");
-
-		//saving lastSearch results to the current session
-		let lastSearch = this.attributes.lastSearch = searchResults;
-		let output;
-
-		//saving last intent to session attributes
-		this.attributes.lastSearch.lastIntent = "SearchByNameIntent";
-
-		if (searchResults.count > 1) { //multiple results found
-			console.log("Search completed by city. Multiple results were found");
-			let listOfPeopleFound = loopThroughArrayOfObjects(lastSearch.results);
-			output = generateSearchResultsMessage(searchQuery,searchResults.results) + listOfPeopleFound + ". Who would you like to learn more about?";
-			this.handler.state = states.MULTIPLE_RESULTS; // change state to MULTIPLE_RESULTS
-			this.attributes.lastSearch.lastSpeech = output;
-			this.response.speak(output).listen(output);
-		} else if (searchResults.count == 1) { //one result found
-			console.log("one match found");
-			this.handler.state = states.DESCRIPTION; // change state to description
-			output = generateSearchResultsMessage(searchQuery,searchResults.results);
-			this.attributes.lastSearch.lastSpeech = output;
-			// this.emit(":ask", generateSearchResultsMessage(searchQuery,searchResults.results));
-			this.response.speak(output).listen(output);
-
-		}
-		else{//no match found
-			console.log("no match found");
-			console.log("searchQuery was  = " + searchQuery);
-			console.log("searchResults.results was  = " + searchResults);
-			output = generateSearchResultsMessage(searchQuery,searchResults.results);
-			this.attributes.lastSearch.lastSpeech = output;
-			// this.emit(":ask", generateSearchResultsMessage(searchQuery,searchResults.results));
-			this.response.speak(output).listen(output);
-
-		}
-	}
-	else {
-		console.log("no searchable slot was provided");
-		console.log("searchQuery was  = " + searchQuery);
-		console.log("searchResults.results was  = " + searchResults);
-
-		this.response.speak(generateSearchResultsMessage(searchQuery,false)).listen(generateSearchResultsMessage(searchQuery,false));
-	}
-
-	this.emit(':responseReady');
-
-}
-
-function searchByInfoTypeIntentHandler(){
-	var slots = this.event.request.intent.slots;
-	var firstName = isSlotValid(this.event.request, "firstName");
-	var lastName = isSlotValid(this.event.request, "lastName");
-	var cityName = isSlotValid(this.event.request, "cityName");
-	var infoType = isSlotValid(this.event.request, "infoType");
-
-	var canSearch = figureOutWhichSlotToSearchBy(firstName,lastName,cityName);
-	console.log("canSearch is set to = " + canSearch);
-
-	if (canSearch){
-		var searchQuery = slots[canSearch].value;
-		var searchResults = searchDatabase(data, searchQuery, canSearch);
-
-		//saving lastSearch results to the current session
-		var lastSearch = this.attributes.lastSearch = searchResults;
-		var output;
-
-		//saving last intent to session attributes
-		this.attributes.lastSearch.lastIntent = "SearchByNameIntent";
-
-		if (searchResults.count > 1) { //multiple results found
-			console.log("multiple results were found");
-			let listOfPeopleFound = loopThroughArrayOfObjects(lastSearch.results);
-			output = generateSearchResultsMessage(searchQuery,searchResults.results) + listOfPeopleFound + ". Who would you like to learn more about?";
-			this.handler.state = states.MULTIPLE_RESULTS; // change state to MULTIPLE_RESULTS
-			this.attributes.lastSearch.lastSpeech = output;
-			this.response.speak(output).listen(output);
-		} else if (searchResults.count == 1) { //one result found
-			this.handler.state = states.DESCRIPTION; // change state to description
-			console.log("one match was found");
-			if (infoType) {
-				//if a specific infoType was requested, redirect to specificInfoIntent
-				console.log("infoType was provided as well");
-				let person = this.attributes.lastSearch.results[0];
-				let cardContent = generateCard(person);
-				let speechOutput = generateSpecificInfoMessage(slots,person);
-				let repromptSpeech = "Would you like to find another evangelist? Say yes or no";
-				this.attributes.lastSearch.lastSpeech = speechOutput;
-				this.handler.state = states.SEARCHMODE;
-				this.response.cardRenderer(cardContent.title, cardContent.body, cardContent.image);
-				this.response.speak(speechOutput).listen(repromptSpeech);
-				// this.emitWithState("TellMeThisIntent");
-			}
-			else{
-				console.log("no infoType was provided.");
-				output = generateSearchResultsMessage(searchQuery,searchResults.results);
-				this.attributes.lastSearch.lastSpeech = output;
-				// this.emit(":ask", generateSearchResultsMessage(searchQuery,searchResults.results));
-				this.response.speak(output).listen(output);
-			}
-		}
-		else{//no match found
-			console.log("no match found");
-			console.log("searchQuery was  = " + searchQuery);
-			console.log("searchResults.results was  = " + searchResults);
-			output = generateSearchResultsMessage(searchQuery,searchResults.results);
-			this.attributes.lastSearch.lastSpeech = output;
-			// this.emit(":ask", generateSearchResultsMessage(searchQuery,searchResults.results));
-			this.response.speak(output).listen(output);
-		}
-	}
-	else {
-		console.log("no searchable slot was provided");
-		console.log("searchQuery was  = " + searchQuery);
-		console.log("searchResults.results was  = " + searchResults);
-
-		this.response.speak(generateSearchResultsMessage(searchQuery,false)).listen(generateSearchResultsMessage(searchQuery,false));
-	}
-
-	this.emit(':responseReady');
-
-}
 // =====================================================================================================
 // ------------------------------- Section 3. Generating Speech Messages -------------------------------
 // =====================================================================================================
 
-function generateNextPromptMessage(person,mode){
-	let infoTypes = ["git-hub username","twitter handle","linked-in"];
+function generateNextPromptMessage(person, mode) {
+	let infoTypes = ["git-hub username", "twitter handle", "linked-in"];
 	let prompt;
 
-	if (mode == "current"){
+	if (mode == "current") {
 		// if the mode is current, we should give more informaiton about the current contact
-		prompt = ". You can say - tell me more, or  tell me " + genderize("his-her", person.gender) + " " + infoTypes[getRandom(0,infoTypes.length-1)];
+		prompt = ". You can say - tell me more, or  tell me " + genderize("his-her", person.gender) + " " + infoTypes[getRandom(0, infoTypes.length - 1)];
 	}
 	//if the mode is general, we should provide general help information
-	else if (mode == "general"){
-		prompt = ". " + getGenericHelpMessage(data);
+	else if (mode == "general") {
+		prompt = ". " + getGenericHelpMessage(recology);
 	}
 	return prompt;
 }
 
-function generateSendingCardToAlexaAppMessage(person,mode){
-	let sentence = "I have sent " + person.firstName + "'s contact card to your Alexa app" + generateNextPromptMessage(person,mode);
+function generateSendingCardToAlexaAppMessage(person, mode) {
+	let sentence = "I have sent " + person.firstName + "'s contact card to your Alexa app" + generateNextPromptMessage(person, mode);
 	return sentence;
 }
 
-function generateSearchResultsMessage(searchQuery,results){
+function generateSearchResultsMessage(searchQuery, results) {
 	let sentence;
 	let details;
 	let prompt;
 
-	if (results){
+	if (results) {
 		switch (true) {
-		case (results.length == 0):
-			sentence = "Hmm. I couldn't find " + searchQuery + ". " + getGenericHelpMessage(data);
-			break;
-		case (results.length == 1):
-			let person = results[0];
-			details = person.firstName + " " + person.lastName + " is " + person.title + ", based out of " + person.cityName;
-			prompt = generateNextPromptMessage(person,"current");
-			sentence = details + prompt;
-			console.log(sentence);
-			break;
-		case (results.length > 1):
-			sentence = "I found " + results.length + " matching results";
-			break;
+			case (results.length == 0):
+				sentence = "Hmm. I couldn't find " + searchQuery + ". " + getGenericHelpMessage(recology);
+				break;
+			case (results.length == 1):
+				let person = results[0];
+				details = person.firstName + " " + person.lastName + " is " + person.title + ", based out of " + person.cityName;
+				prompt = generateNextPromptMessage(person, "current");
+				sentence = details + prompt;
+				console.log(sentence);
+				break;
+			case (results.length > 1):
+				sentence = "I found " + results.length + " matching results";
+				break;
 		}
 	}
-	else{
-		sentence = "Sorry, I didn't quite get that. " + getGenericHelpMessage(data);
+	else {
+		sentence = "Sorry, I didn't quite get that. " + getGenericHelpMessage(recology);
 	}
 	return sentence;
 }
 
-function getGenericHelpMessage(data){
-	let sentences = ["ask - who is " + getRandomName(data),"say - find an evangelist in " + getRandomCity(data)];
-	return "You can " + sentences[getRandom(0,sentences.length-1)];
+function getGenericHelpMessage(data) {
+	let sentences = [
+		"ask - where can I put a banana?",
+		"ask - which bin do eggshells go into?",
+		"ask - where does cat litter go?"
+	];
+	return "You can " + sentences[getRandom(0, sentences.length - 1)];
 }
 
-function generateSearchHelpMessage(gender){
-	let sentence = "Sorry, I don't know that. You can ask me - what's " + genderize("his-her", gender) +" twitter, or give me " + genderize("his-her", gender) + " git-hub username";
-	return sentence;
-}
-
-function generateTellMeMoreMessage(person){
-	let sentence = person.firstName + " joined the Alexa team in " + person.joinDate + ". " + genderize("his-her", person.gender) + " Twitter handle is " + person.saytwitter + " . " + generateSendingCardToAlexaAppMessage(person,"general");
-	return sentence;
-}
-function generateSpecificInfoMessage(slots,person){
+function generateSpecificInfoMessage(slots, person) {
 	let infoTypeValue;
 	let sentence;
 
-	if (slots.infoType.value == "git hub"){
+	if (slots.infoType.value == "git hub") {
 		infoTypeValue = "github";
 		console.log("resetting gith hub to github");
 	}
-	else{
+	else {
 		console.log("no reset required for github");
 		infoTypeValue = slots.infoType.value;
 	}
 
-	sentence = person.firstName + "'s " + infoTypeValue.toLowerCase() + " is - " + person["say" + infoTypeValue.toLowerCase()] + " . Would you like to find another evangelist? " + getGenericHelpMessage(data);
+	sentence = person.firstName + "'s " + infoTypeValue.toLowerCase() + " is - " + person["say" + infoTypeValue.toLowerCase()] + " . Would you like to find another evangelist? " + getGenericHelpMessage(recology);
 	return optimizeForSpeech(sentence);
 }
 
 exports.handler = function(event, context, callback) {
 	let alexa = Alexa.handler(event, context);
 	alexa.appId = APP_ID;
-	alexa.registerHandlers(newSessionHandlers, startSearchHandlers, descriptionHandlers, multipleSearchResultsHandlers);
+	alexa.registerHandlers(newSessionHandlers, startSearchHandlers);
 	alexa.execute();
 };
 
@@ -723,13 +766,8 @@ function getRandom(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function getRandomCity(arrayOfStrings) {
-	return arrayOfStrings[getRandom(0, data.length - 1)].cityName;
-}
-
-function getRandomName(arrayOfStrings) {
-	let randomNumber = getRandom(0, data.length - 1);
-	return arrayOfStrings[randomNumber].firstName + " " + arrayOfStrings[randomNumber].lastName;
+function getRandomItem(arrayOfStrings) {
+	return arrayOfStrings[getRandom(0, arrayOfStrings.length - 1)].itemName;
 }
 
 function titleCase(str) {
@@ -761,27 +799,27 @@ function loopThroughArrayOfObjects(arrayOfStrings) {
 }
 
 function genderize(type, gender) {
-	let pronouns ={
-		"m":{"he-she":"he","his-her":"his","him-her":"him"},
-		"f":{"he-she":"she","his-her":"her","him-her":"her"}
+	let pronouns = {
+		"m": { "he-she": "he", "his-her": "his", "him-her": "him" },
+		"f": { "he-she": "she", "his-her": "her", "him-her": "her" }
 	};
 	return pronouns[gender][type];
 }
 
-function sanitizeSearchQuery(searchQuery){
+function sanitizeSearchQuery(searchQuery) {
 	searchQuery = searchQuery.replace(/’s/g, "").toLowerCase();
 	searchQuery = searchQuery.replace(/'s/g, "").toLowerCase();
 	return searchQuery;
 }
 
-function optimizeForSpeech(str){
-	let optimizedString = str.replace("github","git-hub");
+function optimizeForSpeech(str) {
+	let optimizedString = str.replace("github", "git-hub");
 	return optimizedString;
 }
 
-function isSlotValid(request, slotName){
+function isSlotValid(request, slotName) {
 	let slot = request.intent.slots[slotName];
-	//console.log("request = "+JSON.stringify(request)); //uncomment if you want to see the request
+	console.log("request = "+JSON.stringify(request)); //uncomment if you want to see the request
 	let slotValue;
 
 	//if we have a slot, get the text and store it into speechOutput
@@ -789,7 +827,8 @@ function isSlotValid(request, slotName){
 		//we have a value in the slot
 		slotValue = slot.value.toLowerCase();
 		return slotValue;
-	} else {
+	}
+	else {
 		//we didn't get a value in the slot.
 		return false;
 	}
@@ -799,7 +838,7 @@ function isInArray(value, array) {
 	return array.indexOf(value) > -1;
 }
 
-function isInfoTypeValid(infoType){
-	let validTypes = ["git hub","github","twitter","linkedin"];
-	return isInArray(infoType,validTypes);
+function isInfoTypeValid(infoType) {
+	let validTypes = ["git hub", "github", "twitter", "linkedin"];
+	return isInArray(infoType, validTypes);
 }
