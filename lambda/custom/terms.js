@@ -1,22 +1,28 @@
 const recology = require("./recology");
 var fs = require('fs');
 
-function writeTerms(dataset, fd) {
+function extractTerms(dataset, termsSet) {
     for (let i = 0; i < dataset.length; i++) {
         let searchTerms = dataset[i].terms;
         for (let j = 0; j < searchTerms.length; j++) {
-            fs.writeSync(fd, searchTerms[j] + "\n");
+            termsSet.set(searchTerms[j].toLowerCase(), true);
         }
     }
 }
 
-fs.open('terms.txt', 'w', (err, fd) => {
-    if (err) throw err;
+let termsSet = new Map();
+extractTerms(recology.compost, termsSet);
+extractTerms(recology.recycling, termsSet);
+extractTerms(recology.landfill, termsSet);
 
-    writeTerms(recology.compost, fd);
-    writeTerms(recology.compost, fd);
-    writeTerms(recology.compost, fd);
-    fs.close(fd, (err) => {
-        if (err) throw err;
+values = [];
+termsSet.forEach(function (value, key, map) {
+    values.push({
+        "name": {
+            "value": key,
+        }
     });
 });
+
+
+fs.writeFileSync('terms.json', JSON.stringify(values));
