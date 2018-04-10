@@ -215,15 +215,15 @@ function searchByItemIntentHandler() {
 
 		if (compostResults.count > 0) {
 			console.log(JSON.stringify(compostResults));
-			output += "You can compost " + compostResults.results.join(" and ");
+			output += "You can compost " + compostResults.results.join(" and ") + ". ";
 		}
 		if (recyclingResults.count > 0) {
 			console.log(JSON.stringify(recyclingResults));
-			output += "You can recycle " + recyclingResults.results.join(" and ");
+			output += "You can recycle " + recyclingResults.results.join(" and ") + ". ";
 		}
 		if (landfillResults.count > 0) {
 			console.log(JSON.stringify(landfillResults));
-			output += "You have to put the following in the landfill: " + landfillResults.results.join(" and ");
+			output += "You have to put the following in the landfill: " + landfillResults.results.join(" and ") + ". ";
 		}
 	}
 	else {
@@ -289,7 +289,7 @@ function generateSearchResultsMessage(searchQuery, results) {
 
 function getGenericHelpMessage(data) {
 	let sentences = [
-		"ask - where can I put a banana?",
+		"ask - where can I put plastic?",
 		"ask - which bin do eggshells go into?",
 		"ask - where does cat litter go?"
 	];
