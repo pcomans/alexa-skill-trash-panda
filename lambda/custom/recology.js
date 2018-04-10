@@ -134,7 +134,7 @@ const compost = [
     },
     {
         "terms": [
-            "Compostable Plastic", "cutlery", "compostable cutlery",
+            "Plastic", "Compostable Plastic", "cutlery", "compostable cutlery",
         ],
         "desc": "Plastic and cutlery clearly labeled “Compostable” (green stripe or sticker to allow for easy identification)",
     },
@@ -152,7 +152,7 @@ const compost = [
     },
     {
         "terms": [
-            "lumber", "sawdust",
+            "lumber", "sawdust", "Wood",
         ],
         "desc": "Wood – small pieces of lumber or sawdust from clean wood only (no plywood, press board, painted, stained or treated wood)",
     },
@@ -209,7 +209,7 @@ const recycling = [
     },
     {
         "terms": [
-            "plastic bags", "bags",
+            "plastic", "plastic bags", "bags",
         ],
         "desc": "Clean, dry, empty plastic bags inside a clear plastic bag (the size roughly of a basketball)",
     },
@@ -245,7 +245,7 @@ const recycling = [
     },
     {
         "terms": [
-            "plastic Corks",
+            "Corks", "plastic Corks",
         ],
         "desc": "Corks – plastic",
     },
@@ -269,7 +269,7 @@ const recycling = [
     },
     {
         "terms": [
-            "plastic packaging",
+            "plastic", "plastic packaging",
         ],
         "desc": "Molded plastic packaging",
     },
@@ -425,12 +425,24 @@ const recycling = [
     },
 ];
 const landfill = [
-    {
-        "terms": [
-            "cat litter",
-        ],
-        "desc": "your kitty's doodoo",
-    },
+    { "terms": ["Cat litter", "poo", "poop", "dog poo", "feces",], "desc": "Cat litter and animal feces (bagged)" },
+    { "terms": ["ceramic", "glass"], "desc": "Ceramic dishware or glassware" },
+    { "terms": ["cigarettes", "cigarette butts", "butts"], "desc": "Cigarette Butts (extinguished – run under water prior to disposal)" },
+    { "terms": ["floss", "dental floss",], "desc": "Dental floss" },
+    { "terms": ["Diapers", "pampers"], "desc": "Diapers" },
+    { "terms": ["pads", "tampons", "Feminine Hygiene Products",], "desc": "Feminine Hygiene Products" },
+    { "terms": ["mirrors", "windows",], "desc": "Glass mirrors and windows inside a double brown paper bag and smashed in small pieces" },
+    { "terms": ["light bulbs", "Incandescent light bulbs",], "desc": "Incandescent light bulbs (no fluorescents or HIDs)" },
+    { "terms": ["candy wrappers", "chips bags", "mylar bags",], "desc": "Mylar (shiny metal) bags (potato chips, candy bars, balloons, etc)" },
+    { "terms": ["pens", "pencils",], "desc": "Pens and pencils" },
+    { "terms": ["plastic"], "desc": "Plastic items mixed with metal or rubber" },
+    { "terms": ["plastic"], "desc": "Plastic labeled “Biodegradable” only" },
+    { "terms": ["rubber", "rubber bands",], "desc": "Rubber bands" },
+    { "terms": ["ring holder", "Six-pack ring holder",], "desc": "Six-pack ring holder – please cut up" },
+    { "terms": ["Sponges"], "desc": "Sponges" },
+    { "terms": ["Styrofoam"], "desc": "Styrofoam" },
+    { "terms": ["Twist ties", "ties"], "desc": "Twist ties" },
+    { "terms": ["Wood", "plywood", "press board"], "desc": "Wood – small pieces of plywood, press board, and painted or stained wood" },
 ];
 
 module.exports = {
