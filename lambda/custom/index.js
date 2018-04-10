@@ -26,17 +26,13 @@ const skillName = "Trash Panda";
 const WELCOME_MESSAGE = "Welcome to " + skillName + " Learn how to recycle common household waste. For example, " + getGenericHelpMessage(recology);
 
 //This is the message a user will hear when they ask Alexa for help in your skill.
-const HELP_MESSAGE = "I can help you find Alexa Evangelists and Solutions Architects. ";
+const HELP_MESSAGE = "I can help you to recycle common household waste. ";
 
 //This is the message a user will hear when they begin a new search
 const NEW_SEARCH_MESSAGE = getGenericHelpMessage(recology);
 
 //This is the message a user will hear when they ask Alexa for help while in the SEARCH state
 const SEARCH_STATE_HELP_MESSAGE = getGenericHelpMessage(recology);
-
-const DESCRIPTION_STATE_HELP_MESSAGE = "Here are some things you can say: Tell me more, or give me his or her contact info";
-
-const MULTIPLE_RESULTS_STATE_HELP_MESSAGE = "Sorry, please say the first and last name of the person you'd like to learn more about";
 
 // This is the message use when the decides to end the search
 const SHUTDOWN_MESSAGE = "Ok.";
@@ -239,54 +235,6 @@ function searchByItemIntentHandler() {
 // ------------------------------- Section 3. Generating Speech Messages -------------------------------
 // =====================================================================================================
 
-function generateNextPromptMessage(person, mode) {
-	let infoTypes = ["git-hub username", "twitter handle", "linked-in"];
-	let prompt;
-
-	if (mode == "current") {
-		// if the mode is current, we should give more informaiton about the current contact
-		prompt = ". You can say - tell me more, or  tell me " + genderize("his-her", person.gender) + " " + infoTypes[getRandom(0, infoTypes.length - 1)];
-	}
-	//if the mode is general, we should provide general help information
-	else if (mode == "general") {
-		prompt = ". " + getGenericHelpMessage(recology);
-	}
-	return prompt;
-}
-
-function generateSendingCardToAlexaAppMessage(person, mode) {
-	let sentence = "I have sent " + person.firstName + "'s contact card to your Alexa app" + generateNextPromptMessage(person, mode);
-	return sentence;
-}
-
-function generateSearchResultsMessage(searchQuery, results) {
-	let sentence;
-	let details;
-	let prompt;
-
-	if (results) {
-		switch (true) {
-			case (results.length == 0):
-				sentence = "Hmm. I couldn't find " + searchQuery + ". " + getGenericHelpMessage(recology);
-				break;
-			case (results.length == 1):
-				let person = results[0];
-				details = person.firstName + " " + person.lastName + " is " + person.title + ", based out of " + person.cityName;
-				prompt = generateNextPromptMessage(person, "current");
-				sentence = details + prompt;
-				console.log(sentence);
-				break;
-			case (results.length > 1):
-				sentence = "I found " + results.length + " matching results";
-				break;
-		}
-	}
-	else {
-		sentence = "Sorry, I didn't quite get that. " + getGenericHelpMessage(recology);
-	}
-	return sentence;
-}
-
 function getGenericHelpMessage(data) {
 	let sentences = [
 		"ask - where can I put plastic?",
@@ -294,23 +242,6 @@ function getGenericHelpMessage(data) {
 		"ask - where does cat litter go?"
 	];
 	return "You can " + sentences[getRandom(0, sentences.length - 1)];
-}
-
-function generateSpecificInfoMessage(slots, person) {
-	let infoTypeValue;
-	let sentence;
-
-	if (slots.infoType.value == "git hub") {
-		infoTypeValue = "github";
-		console.log("resetting gith hub to github");
-	}
-	else {
-		console.log("no reset required for github");
-		infoTypeValue = slots.infoType.value;
-	}
-
-	sentence = person.firstName + "'s " + infoTypeValue.toLowerCase() + " is - " + person["say" + infoTypeValue.toLowerCase()] + " . Would you like to find another evangelist? " + getGenericHelpMessage(recology);
-	return optimizeForSpeech(sentence);
 }
 
 exports.handler = function (event, context, callback) {
@@ -338,47 +269,10 @@ function titleCase(str) {
 	return str.replace(str[0], str[0].toUpperCase());
 }
 
-function generateCard(person) {
-	let cardTitle = "Contact Info for " + titleCase(person.firstName) + " " + titleCase(person.lastName);
-	let cardBody = "Twitter: " + "@" + person.twitter + " \n" + "GitHub: " + person.github + " \n" + "LinkedIn: " + person.linkedin;
-	let imageObj = {
-		smallImageUrl: "https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/team-lookup/avatars/" + person.firstName + "._TTH_.jpg",
-		largeImageUrl: "https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/team-lookup/avatars/" + person.firstName + "._TTH_.jpg",
-	};
-	return {
-		"title": cardTitle,
-		"body": cardBody,
-		"image": imageObj
-	};
-}
-
-function loopThroughArrayOfObjects(arrayOfStrings) {
-	let joinedResult = "";
-	// Looping through the each object in the array
-	for (let i = 0; i < arrayOfStrings.length; i++) {
-		//concatenating names (firstName + lastName ) for each item
-		joinedResult = joinedResult + ", " + arrayOfStrings[i].firstName + " " + arrayOfStrings[i].lastName;
-	}
-	return joinedResult;
-}
-
-function genderize(type, gender) {
-	let pronouns = {
-		"m": { "he-she": "he", "his-her": "his", "him-her": "him" },
-		"f": { "he-she": "she", "his-her": "her", "him-her": "her" }
-	};
-	return pronouns[gender][type];
-}
-
 function sanitizeSearchQuery(searchQuery) {
 	searchQuery = searchQuery.replace(/’s/g, "").toLowerCase();
 	searchQuery = searchQuery.replace(/'s/g, "").toLowerCase();
 	return searchQuery;
-}
-
-function optimizeForSpeech(str) {
-	let optimizedString = str.replace("github", "git-hub");
-	return optimizedString;
 }
 
 function isSlotValid(request, slotName) {
@@ -396,13 +290,4 @@ function isSlotValid(request, slotName) {
 		//we didn't get a value in the slot.
 		return false;
 	}
-}
-
-function isInArray(value, array) {
-	return array.indexOf(value) > -1;
-}
-
-function isInfoTypeValid(infoType) {
-	let validTypes = ["git hub", "github", "twitter", "linkedin"];
-	return isInArray(infoType, validTypes);
 }
